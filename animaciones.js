@@ -1,14 +1,20 @@
 
-function saludar () {
-    let nombre = prompt ("¡Bienvenido!, Ingrese su nombre")
-    alert ("¡Hola " + nombre + "!"+ " Gracias por contactarse con nosotros")
+function saludar() {
+    let nombre = prompt("¡Bienvenido!, Ingresa tu nombre")
+    
+    while (nombre === '' || /^[0-9]+$/.test(nombre) || nombre.trim() === '') {
+        alert("Hola, digita bien tu nombre")
+        nombre = prompt("¡Bienvenido!, Ingresa tu nombre")
+    }
+
+    alert("¡Hola " + nombre + "! Gracias por contactarte con nosotros")
 }
 saludar ()
 
 function paisDeResidencia () {
     let pais = prompt ("¿De qué país sos?")
     if (pais && pais.toLowerCase () === "argentina") {
-        alert ("¡Que bueno! Nosotros también somos de Argentina");
+        alert ("¡Que bueno! Nosotros también somos de Argentina")
     }
     else {
         alert ("¡Que pena! Estamos lejos, nosotros somos de Argentina")
@@ -47,30 +53,27 @@ PasosAlDia ()
 
 
 let numero3 = 0;
-let EscribeUnNumero = parseInt(prompt("Escribe un numero del 1 al 10"));
+let EscribeUnNumero = parseInt(prompt("Escribí un numero del 1 al 10"));
 let numeroRepetido = 0;
 
 if (EscribeUnNumero >= 1 && EscribeUnNumero <= 10) {
     for (numero3 = 1; numero3 <= EscribeUnNumero; numero3++) {
         for (numeroRepetido = 1; numeroRepetido <= numero3; numeroRepetido++) {
-            console.log (numeroRepetido + " ");
+            document.write (numeroRepetido + " ")
         }
     }
 } else {
-    console.log ("No es un número válido");
+    console.log ("No es un número válido")
 }
 
-let nota1 = parseInt(prompt("Ingrese la primera nota:"));
-let nota2 = parseInt(prompt("Ingrese la segunda nota:"));
-let nota3 = parseInt(prompt("Ingrese la tercera nota:"));
+let notaPrimera = parseInt(prompt("Ahora contanos cuál fué tu primer nota de matemática:"))
+let notaSegunda = parseInt(prompt("Ahora la segunda nota:"))
+let notaTercera = parseInt(prompt("Y por último la tercera nota:"))
 
-// Verifica que las notas sean números válidos
-if (!isNaN(nota1) && !isNaN(nota2) && !isNaN(nota3)) {
-  // Calcula el promedio de las notas
-  let promedio = (nota1 + nota2 + nota3) / 3;
+if (!isNaN(notaPrimera) && !isNaN(notaSegunda) && !isNaN(notaTercera)) {
+  let promedio = (notaPrimera + notaSegunda + notaTercera) / 3
 
-  // Muestra el resultado
-  alert("El promedio de las tres notas es: " + promedio.toFixed(2));
+  alert("El promedio de las tres notas es: " + promedio.toFixed(2))
 } else {
-  alert("Por favor, ingrese notas válidas como números.");
+  alert("Ingresá números válidos")
 }
